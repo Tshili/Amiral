@@ -1,0 +1,27 @@
+{
+  "name": "amiral",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "neutrino start",
+    "build": "neutrino build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@neutrinojs/node": "^8.0.15",
+    "neutrino": "^8.0.15",
+    "source-map-support": "^0.5.0"
+  },
+  "dependencies": {
+    "ava": "^0.24.0",
+    "boom": "^7.1.1",
+    "hapi": "^17.2.0",
+    "joi": "^13.1.0",
+    "rxjs": "^5.5.6",
+    "space-lift": "^0.6.4",
+    "z": "^1.0.4"
+  }
+}
