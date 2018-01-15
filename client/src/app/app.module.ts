@@ -5,13 +5,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FlagshipShipComponent } from './flagship-ship/flagship-ship.component';
 import { NavComponent } from './nav/nav.component';
+import { InformationComponent } from './information/information.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FlagshipShipComponent,
-    NavComponent
+    NavComponent,
+    InformationComponent
   ],
   imports: [
     BrowserModule
