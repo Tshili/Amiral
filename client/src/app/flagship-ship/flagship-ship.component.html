@@ -12,31 +12,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>lolo</td>
-        <td>i</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>kokoit</td>
-        <td>i</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-        <td>oowitter</td>
-        <td>i</td>
+      <tr *ngFor="let sat of flee">
+        <th scope="row">{{sat.id}}</th>
+        <td>{{sat.ipPAdress}}</td>
+        <td>{{sat.status}}</td>
+        <td>{{sat.timeElapsed}}</td>
+        <td>{{sat.token}}</td>
+        <td><a [routerLink]="['/vaisseauSatellite', sat.id]" (click)="onSelect(hero)" 
+          >
+          <span class="glyphicon glyphicon-info-sign"></span>
+        </a></td>
       </tr>
     </tbody>
   </table>
+  <app-information [vessel]="selectedHero"></app-information>
 </div> 
 
