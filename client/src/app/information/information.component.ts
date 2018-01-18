@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
+import { Subscription } from 'rxjs/Subscription';
 import { DataVesselComponent } from '../model/data-vessel/data-vessel.component';
 
 
@@ -11,18 +12,25 @@ import { DataVesselComponent } from '../model/data-vessel/data-vessel.component'
 })
 export class InformationComponent implements OnInit {
 
-  name:any;
+  message: any;
+    subscription: Subscription;
 
-  sub:any;
-
-  constructor(private route:ActivatedRoute, private _data:DataService,  private location: Location ) {
-    this.route.params.subscribe(res => console.log(res.id));
+  
+  constructor( private _data:DataService ) {
+    this.subscription = this._data.getMessage().subscribe(message => { this.message = message; });
    }
 
   ngOnInit() {
   }
 
-  @Input() vessel: DataVesselComponent;
+
+  getHero(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.heroService.getHero(id)
+      .subscribe(hero => this.hero = hero);
+  }
+
+  
 
   
  

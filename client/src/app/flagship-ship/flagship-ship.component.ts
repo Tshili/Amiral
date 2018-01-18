@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+
 import { DataVesselComponent } from '../model/data-vessel/data-vessel.component';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-flagship-ship',
@@ -15,30 +17,33 @@ export class FlagshipShipComponent implements OnInit {
   heroes: DataVesselComponent[];
 
   flee = [
-    new DataVesselComponent(1,1921111,'UP',12,1119992882 ),
-    new DataVesselComponent(2,1921665,'UP',5,1119992882 ),
-    new DataVesselComponent(3,1921111,'DOWN',500,1119555 ),
-    new DataVesselComponent(4,1921111,'UP',25,1119992882 ),
-    new DataVesselComponent(5,1921111,'DOWN',5,1119992555 )
+    {id: 1,ipPAdress: "192.168.1.11",status:'UP',timeElapsed:12,token: 1119992882 },
+    {id: 2,ipPAdress: "192.168.1.11",status:'UP',timeElapsed:12,token: 1119992882 },
+    {id: 3,ipPAdress: "192.168.1.11",status:'UP',timeElapsed:12,token: 1119992882 },
+    {id: 4,ipPAdress: "192.168.1.11",status:'UP',timeElapsed:12,token: 1119992882 },
+    {id: 5,ipPAdress: "192.168.1.11",status:'UP',timeElapsed:12,token: 1119992882 }
   ];
 
-  constructor(private _data:DataService) { }
+  constructor(private _data: DataService) { }
 
   
 
 ngOnInit() {
-    this.getHeroes();
+    
   }
 
+@Input() vessel;
+  
+  onSelect(sat): void {
+    vessel = sat;
+   
+}
 
-  onSelect(hero: DataVesselComponent): void {
-    this.selectedHero = hero;
-  }
+clearMessage(): void {
+    // clear message
+    this._data.clearMessage();
+}
 
-  getHero(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this._data.getHero(id)
-      .subscribe(hero => this.hero = hero);
-  }
+
 
 }

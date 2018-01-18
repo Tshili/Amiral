@@ -18,13 +18,13 @@
         <td>{{sat.status}}</td>
         <td>{{sat.timeElapsed}}</td>
         <td>{{sat.token}}</td>
-        <td><a [routerLink]="['/vaisseauSatellite', sat.id]" (click)="onSelect(hero)" 
+        <td><a routerLink="/vaisseauSatellite/{{sat.id}}"  (click) ="onSelect(sat)"
           >
           <span class="glyphicon glyphicon-info-sign"></span>
         </a></td>
       </tr>
     </tbody>
   </table>
-  <app-information [vessel]="selectedHero"></app-information>
+  
 </div> 
 
