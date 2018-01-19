@@ -1,14 +1,25 @@
 <div class="container">
     <h1> Satellite {{satellite.id}}</h1>
 
-  <div><span>Id: </span>{{satellite.id}}</div>
-  <div><span>Adresse IP: </span>{{satellite.ipPAdress}}</div>
-  <div><span>Status: </span>{{satellite.status}}</div>
-  <div><span>TimeElapsed IP: </span>{{satellite.timeElapsed}}</div>
-  <div><span>Token: </span>{{satellite.token}}</div>
- 
-
-
-
   
+
+
+    <div class="list-group" >
+        <div class="list-group-item  text-center">
+            <span class="glyphicon glyphicon-user"></span> ID : {{satellite.id}}
+        </div>
+        <div href="#" class="list-group-item  text-center">
+            <span class="glyphicon glyphicon-envelope"></span> Adresse IP : {{satellite.ipPAdress}}
+        </div>
+        <div href="#" class="list-group-item  text-center">
+            <span class="glyphicon glyphicon-thumbs-up"></span> Status  : {{satellite.status}} 
+        </div>
+        <div href="#" class="list-group-item  text-center">
+            <span class="glyphicon glyphicon-dashboard"></span> Time elapse  : {{satellite.timeElapsed}}
+        </div>
+        <div href="#" class="list-group-item  text-center ">
+            <span class="glyphicon glyphicon-barcode"></span> Token  : {{satellite.token}}
+        </div>
+    </div>
+ 
 </div>
