@@ -12,13 +12,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let sat of flee">
+      <tr *ngFor="let sat of flees">
         <th scope="row">{{sat.id}}</th>
         <td>{{sat.ipPAdress}}</td>
         <td>{{sat.status}}</td>
         <td>{{sat.timeElapsed}}</td>
         <td>{{sat.token}}</td>
-        <td><a routerLink="/vaisseauSatellite/{{sat.id}}"  (click) ="onSelect(sat)"
+        <td><a routerLink="/vaisseauSatellite/{{sat.id}}"  
           >
           <span class="glyphicon glyphicon-info-sign"></span>
         </a></td>

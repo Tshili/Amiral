@@ -12,22 +12,25 @@ import { DataVesselComponent } from '../model/data-vessel/data-vessel.component'
 })
 export class InformationComponent implements OnInit {
 
-  message: any;
-    subscription: Subscription;
+  @Input() satellite: DataVesselComponent;
+   
 
   
-  constructor( private _data:DataService ) {
-    this.subscription = this._data.getMessage().subscribe(message => { this.message = message; });
+  constructor( private _data:DataService, private route: ActivatedRoute ) {
+   
    }
 
   ngOnInit() {
+    this.getSatellite();
   }
 
+  
 
-  getHero(): void {
+
+  getSatellite(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
+    this._data.getSatellite(id)
+      .subscribe(satellite => this.satellite = satellite);
   }
 
   

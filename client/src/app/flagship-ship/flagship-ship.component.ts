@@ -12,19 +12,12 @@ import { Input } from '@angular/core';
 export class FlagshipShipComponent implements OnInit {
 
   title = 'Etat de la flotte';
+  flees: DataVesselComponent[] = [];
 
-  selectedHero: DataVesselComponent;
-  heroes: DataVesselComponent[];
 
-  flee = [
-    {id: 1,ipPAdress: "192.168.1.11",status:'UP',timeElapsed:12,token: 1119992882 },
-    {id: 2,ipPAdress: "192.168.1.11",status:'UP',timeElapsed:12,token: 1119992882 },
-    {id: 3,ipPAdress: "192.168.1.11",status:'UP',timeElapsed:12,token: 1119992882 },
-    {id: 4,ipPAdress: "192.168.1.11",status:'UP',timeElapsed:12,token: 1119992882 },
-    {id: 5,ipPAdress: "192.168.1.11",status:'UP',timeElapsed:12,token: 1119992882 }
-  ];
-
-  constructor(private _data: DataService) { }
+  constructor(private _data: DataService) {
+    this.flees = this._data.ships;
+   }
 
   
 
@@ -32,17 +25,9 @@ ngOnInit() {
     
   }
 
-@Input() vessel;
-  
-  onSelect(sat): void {
-    vessel = sat;
-   
-}
 
-clearMessage(): void {
-    // clear message
-    this._data.clearMessage();
-}
+  
+
 
 
 
