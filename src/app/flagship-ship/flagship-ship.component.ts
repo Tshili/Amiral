@@ -16,19 +16,10 @@ export class FlagshipShipComponent implements OnInit {
 
 
   constructor(private _data: DataService) {
-    this.flees = this._data.ships;
    }
-
-  
-
 ngOnInit() {
-    
+    this._data.getSatellites().subscribe(
+      (satellites) => this.flees = satellites
+    );
   }
-
-
-  
-
-
-
-
 }
