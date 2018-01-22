@@ -6,7 +6,7 @@ import { FlagshipShipComponent } from './flagship-ship/flagship-ship.component';
 import { NavComponent } from './nav/nav.component';
 import { InformationComponent } from './information/information.component';
 import { DataService } from './data.service';
-
+import { HttpClientModule } from '@angular/common/http';
 import { DataVesselComponent } from './model/data-vessel/data-vessel.component';
 
 
@@ -22,11 +22,11 @@ const routes: Routes = [
     FlagshipShipComponent,
     NavComponent,
     InformationComponent,
-    
     DataVesselComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [DataService],

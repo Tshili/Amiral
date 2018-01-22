@@ -7,17 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataVesselComponent implements OnInit {
 
-    id : number;
-    ipPAdress : string;
-    status : string;
-    timeElapsed: number; 
+    id: number;
+    ipPAdress: string;
+    status: string;
+    timeElapsed: string;
     token: number;
 
-  constructor(id:number,ipPAdress:string,status:string,timeElapsed:number, token:number ) {
+  constructor(id: number, ipPAdress: string, status: string, timeElapsed: string, token: number ) {
     this.id = id;
     this.ipPAdress = ipPAdress;
     this.status = status;
-    this.timeElapsed=timeElapsed;
+    this.timeElapsed = timeElapsed;
     this.token = token;
    }
 
